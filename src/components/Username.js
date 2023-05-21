@@ -100,6 +100,12 @@ export default function Username() {
                 </Link>
               </span>
             </div>
+             <div className="text-center py-2">
+              <span className="text-gray-500">
+                For Testing Use: Username - hey123 & password - hey@123
+              </span>
+            </div>
+           
           </form>
         </div>
       </div>
