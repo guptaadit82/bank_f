@@ -95,6 +95,11 @@ export default function Password() {
               <div className="text-center py-4">
                 <span className='text-gray-500'>Forgot Password? <Link className='text-red-500' to="/recovery">Reset Now</Link></span>
               </div>
+                <div className="text-center py-2">
+              <span className="text-gray-500">
+                For Testing Use: Username - hey123 & password - hey@123
+              </span>
+            </div>
 
           </form>
 
