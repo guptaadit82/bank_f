@@ -28,25 +28,7 @@ export default function Username() {
       navigate('/password');
     }
   });
-  const [loanAmount, setLoanAmount] = useState('');
-  const [loanDuration, setLoanDuration] = useState('');
-  const [loanInterest, setLoanInterest] = useState('');
-  const [monthlyPayment, setMonthlyPayment] = useState(0);
-
-  const calculateLoan = () => {
-    const principal = parseFloat(loanAmount);
-    const duration = parseInt(loanDuration);
-    const interestRate = parseFloat(loanInterest) / 100;
-
-    const monthlyInterestRate = interestRate / 12;
-    const numberOfPayments = duration * 12;
-
-    const numerator = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments);
-    const denominator = Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1;
-
-    const monthlyPayment = principal * (numerator / denominator);
-    setMonthlyPayment(monthlyPayment.toFixed(2));
-  };
+  
   return (
     <div className="container mx-auto flex flex-col h-screen">
       <nav className="bg-transparent py-4 border-b-2 border-gray-300">
@@ -127,44 +109,7 @@ export default function Username() {
           </form>
         </div>
       </div>
-      <div>
-      <h1>Loan EMI Calculator </h1>
-
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <label htmlFor="loanAmount">Loan Amount:</label>
-        <input
-          type="number"
-          id="loanAmount"
-          value={loanAmount}
-          onChange={(e) => setLoanAmount(e.target.value)}
-          style={{ marginRight: '10px',marginLeft:'10px' }}
-        />
-
-        <label htmlFor="loanDuration">Loan Duration (in years):</label>
-        <input
-          type="number"
-          id="loanDuration"
-          value={loanDuration}
-          onChange={(e) => setLoanDuration(e.target.value)}
-          style={{ marginRight: '10px',marginLeft:'10px' }}
-        />
-
-        <label htmlFor="loanInterest">Interest Rate (%):</label>
-        <input
-          type="number"
-          id="loanInterest"
-          value={loanInterest}
-          onChange={(e) => setLoanInterest(e.target.value)}
-          style={{ marginRight: '10px',marginLeft:'10px' }}
-        />
-
-        <button onClick={calculateLoan} style={{ marginRight: '10px' }}>
-          Calculate EMI
-        </button>
-
-        <span>Monthly Payment: ₹{monthlyPayment}</span>
-      </div>
-    </div>
+      
 
       <footer className="bg-transparent py-4">
         <div className="container mx-auto text-center text-black">
