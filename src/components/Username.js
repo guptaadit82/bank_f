@@ -18,7 +18,7 @@ export default function Username() {
 
   const formik = useFormik({
     initialValues: {
-      username: ' '
+      username: ''
     },
     validate: usernameValidate,
     validateOnBlur: false,
@@ -109,6 +109,44 @@ export default function Username() {
           </form>
         </div>
       </div>
+      <div>
+      <h1>Loan EMI Calculator </h1>
+
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <label htmlFor="loanAmount">Loan Amount:</label>
+        <input
+          type="number"
+          id="loanAmount"
+          value={loanAmount}
+          onChange={(e) => setLoanAmount(e.target.value)}
+          style={{ marginRight: '10px',marginLeft:'10px' }}
+        />
+
+        <label htmlFor="loanDuration">Loan Duration (in years):</label>
+        <input
+          type="number"
+          id="loanDuration"
+          value={loanDuration}
+          onChange={(e) => setLoanDuration(e.target.value)}
+          style={{ marginRight: '10px',marginLeft:'10px' }}
+        />
+
+        <label htmlFor="loanInterest">Interest Rate (%):</label>
+        <input
+          type="number"
+          id="loanInterest"
+          value={loanInterest}
+          onChange={(e) => setLoanInterest(e.target.value)}
+          style={{ marginRight: '10px',marginLeft:'10px' }}
+        />
+
+        <button onClick={calculateLoan} style={{ marginRight: '10px' }}>
+          Calculate EMI
+        </button>
+
+        <span>Monthly Payment: ₹{monthlyPayment}</span>
+      </div>
+    </div>
 
       <footer className="bg-transparent py-4">
         <div className="container mx-auto text-center text-black">
