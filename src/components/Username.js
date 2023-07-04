@@ -28,6 +28,24 @@ export default function Username() {
       navigate('/password');
     }
   });
+  const [loanAmount, setLoanAmount] = useState('');
+  const [loanDuration, setLoanDuration] = useState('');
+  const [loanInterest, setLoanInterest] = useState('');
+  const [monthlyPayment, setMonthlyPayment] = useState(0);
+
+  const calculateLoan = () => {
+    const principal = parseFloat(loanAmount);
+    const duration = parseInt(loanDuration);
+    const interestRate = parseFloat(loanInterest) / 100;
+
+    const monthlyInterestRate = interestRate / 12;
+    const numberOfPayments = duration * 12;
+
+    const numerator = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments);
+    const denominator = Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1;
+
+    const monthlyPayment = principal * (numerator / denominator);
+    setMonthlyPayment(monthlyPayment.toFixed(2));
 
   return (
     <div className="container mx-auto flex flex-col h-screen">
