@@ -46,7 +46,7 @@ export default function Username() {
 
     const monthlyPayment = principal * (numerator / denominator);
     setMonthlyPayment(monthlyPayment.toFixed(2));
-
+  };
   return (
     <div className="container mx-auto flex flex-col h-screen">
       <nav className="bg-transparent py-4 border-b-2 border-gray-300">
