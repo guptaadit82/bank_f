@@ -26,6 +26,57 @@
     background-color:green;
 }
 
+.container {
+    max-width: 40px;
+    margin: 0 auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #FFE4E1;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 8%;
+    padding: 5px;
+    border: 1px solid #FFB6C1;
+    border-radius: 3px;
+  }
+  
+  button {
+    display: block;
+    width: 11%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+
 input[type='file']{
     display: none;
 }
